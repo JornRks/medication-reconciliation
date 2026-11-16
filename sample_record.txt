@@ -1,0 +1,7 @@
+SYNTHETIC TEST RECORD — NOT A REAL PATIENT
+Patient ID: DEMO-001
+Source: Example outside-provider note
+Medication: ExampleMed
+Dose: 10 mg
+Frequency: Once daily
+Status: Listed as current
