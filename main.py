@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-
+from extractor import extract_medication
 
 def import_document(file_path):
     path = Path(file_path)
@@ -40,3 +40,15 @@ if __name__ == "__main__":
         print("Saved document to data/DOC-001.json")
     except (OSError, ValueError) as error:
         print(f"Import failed: {error}")
+
+document = import_document("sample_record.txt")
+
+medication = extract_medication(document)
+
+Path("data/medication-001.json").write_text(
+            json.dumps(medication, indent=2),
+            encoding="utf-8",
+)
+
+print("Extracted medication:")
+print(json.dumps(medication, indent=2))
